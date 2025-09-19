@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>नवरात्रि की हार्दिक शुभकामनाएं</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(to bottom, #8e0000, #520000);
+            color: #fff;
+            min-height: 100vh;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            position: relative;
+        }
+        
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: rgba(255, 215, 0, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 2px solid gold;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+            backdrop-filter: blur(5px);
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            color: gold;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .image-container {
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 15px;
+            border: 3px solid gold;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #000;
+        }
+        
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .input-box {
+            width: 100%;
+            margin-bottom: 25px;
+        }
+        
+        .input-box input {
+            width: 100%;
+            padding: 15px;
+            font-size: 1.2rem;
+            border: 2px solid gold;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.9);
+            text-align: center;
+            outline: none;
+            color: #8e0000;
+        }
+        
+        .input-box input::placeholder {
+            color: #888;
+        }
+        
+        .btn {
+            background: linear-gradient(to bottom, #25D366, #128C7E);
+            color: white;
+            border: none;
+            padding: 16px 40px;
+            font-size: 1.3rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+        
+        .btn i {
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+        
+        .message {
+            margin-top: 20px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            border: 1px solid gold;
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+        
+        .firework {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: gold;
+            box-shadow: 0 0 10px gold;
+            z-index: 1;
+        }
+        
+        .decoration {
+            position: absolute;
+            font-size: 2rem;
+            color: gold;
+            z-index: 2;
+            animation: float 3s infinite ease-in-out;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .speaker-btn {
+            background: linear-gradient(to bottom, #ff8a00, #ff4800);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-top: 15px;
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .speaker-btn i {
+            margin-right: 8px;
+        }
+        
+        footer {
+            margin-top: 30px;
+            text-align: center;
+            color: gold;
+            font-size: 0.9rem;
+        }
+        
+        .receiver-message {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: rgba(255, 215, 0, 0.2);
+            border-radius: 15px;
+            display: none;
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; }
+            .image-container { height: 300px; }
+            .btn { padding: 14px 30px; font-size: 1.1rem; }
+            .receiver-message { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>नवरात्रि की हार्दिक शुभकामनाएं</h1>
+        
+        <div class="receiver-message" id="receiverMessage">
+            <!-- यहाँ रिसीवर का मैसेज दिखेगा -->
+        </div>
+        
+        <div class="image-container">
+            <img src="IMG_20250919_142851.jpg"alt="मां दुर्गा">
+        </div>
+        
+        <div class="input-box">
+            <input type="text" id="userName" placeholder="अपना नाम यहाँ लिखें">
+        </div>
+        
+        <button class="btn" id="whatsappBtn">
+            <i class="fab fa-whatsapp"></i> WhatsApp पर भेजें
+        </button>
+        
+        <div class="message" id="message">
+            <p id="greetingText"></p>
+        </div>
+        
+        <button class="speaker-btn" id="speakBtn">
+            <i class="fas fa-volume-up"></i> शुभकामना सुनें
+        </button>
+    </div>
+    
+    <footer>
+        <p>नवरात्रि 2023 - जय माता दी</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const userNameInput = document.getElementById('userName');
+            const whatsappBtn = document.getElementById('whatsappBtn');
+            const messageDiv = document.getElementById('message');
+            const greetingText = document.getElementById('greetingText');
+            const speakBtn = document.getElementById('speakBtn');
+            const receiverMessageDiv = document.getElementById('receiverMessage');
+            
+            // URL पैरामीटर्स से डेटा पढ़ना
+            const urlParams = new URLSearchParams(window.location.search);
+            const senderName = urlParams.get('from');
+            
+            // अगर URL में कोई नाम है तो रिसीवर मैसेज दिखाएं
+            if (senderName) {
+                receiverMessageDiv.style.display = 'block';
+                receiverMessageDiv.innerHTML = `<i class="fas fa-gift" style="color: #ff9800; margin-right: 10px;"></i> ${decodeURIComponent(senderName)} की तरफ से नवरात्रि की हार्दिक शुभकामनाएं!`;
+                
+                // ऑटोमेटिक बोलना शुरू करें
+                setTimeout(function() {
+                    speakGreeting(`${decodeURIComponent(senderName)} की तरफ से नवरात्रि की हार्दिक शुभकामनाएं! जय माता दी!`);
+                }, 1000);
+            }
+            
+            // पटाखे और सजावट बनाने के लिए
+            createDecorations();
+            
+            // WhatsApp बटन क्लिक करने पर
+            whatsappBtn.addEventListener('click', function() {
+                const userName = userNameInput.value.trim();
+                
+                if (userName === '') {
+                    alert('कृपया अपना नाम लिखें');
+                    return;
+                }
+                
+                const greeting = `${userName} की तरफ से नवरात्रि की हार्दिक शुभकामनाएं! जय माता दी!`;
+                greetingText.textContent = greeting;
+                messageDiv.style.display = 'block';
+                
+                // वर्तमान पेज का URL
+                const currentUrl = window.location.href.split('?')[0]; // पैरामीटर्स हटाएं
+                
+                // WhatsApp शेयरिंग लिंक - नए यूजर का नाम URL में जोड़ें
+                const whatsappUrl = `https://wa.me/?text=${encodeURIComponent('नवरात्रि की शुभकामनाएं! 🪔\n\n' + greeting + '\n\nआप भी भेजें: ' + currentUrl + '?from=' + encodeURIComponent(userName))}`;
+                window.open(whatsappUrl, '_blank');
+                
+                createFireworks();
+            });
+            
+            // बोलने वाला बटन
+            speakBtn.addEventListener('click', function() {
+                const userName = userNameInput.value.trim();
+                
+                if (userName === '') {
+                    alert('कृपया अपना नाम लिखें');
+                    return;
+                }
+                
+                const greeting = `${userName} की तरफ से नवरात्रि की हार्दिक शुभकामनाएं! जय माता दी!`;
+                speakGreeting(greeting);
+            });
+            
+            // बोलने का function
+            function speakGreeting(text) {
+                // टेक्स्ट टू स्पीच
+                const speech = new SpeechSynthesisUtterance();
+                speech.lang = "hi-IN";
+                speech.text = text;
+                speech.volume = 1;
+                speech.rate = 0.9;
+                speech.pitch = 1;
+                
+                window.speechSynthesis.speak(speech);
+            }
+            
+            // सजावट बनाने के लिए फंक्शन
+            function createDecorations() {
+                const body = document.querySelector('body');
+                
+                // दीये और फूल बनाने के लिए
+                for (let i = 0; i < 15; i++) {
+                    const decoration = document.createElement('div');
+                    decoration.classList.add('decoration');
+                    
+                    // यादृच्छिक आइकन चुनें
+                    const icons = ['🪔', '🌸', '🕉️', '✨', '🌟', '🔥'];
+                    const randomIcon = icons[Math.floor(Math.random() * icons.length)];
+                    
+                    decoration.textContent = randomIcon;
+                    decoration.style.left = Math.random() * 100 + 'vw';
+                    decoration.style.top = Math.random() * 100 + 'vh';
+                    decoration.style.animationDelay = Math.random() * 5 + 's';
+                    
+                    body.appendChild(decoration);
+                }
+            }
+            
+            // पटाखे बनाने के लिए फंक्शन
+            function createFireworks() {
+                const body = document.querySelector('body');
+                
+                for (let i = 0; i < 50; i++) {
+                    const firework = document.createElement('div');
+                    firework.classList.add('firework');
+                    
+                    firework.style.left = Math.random() * 100 + 'vw';
+                    firework.style.top = Math.random() * 100 + 'vh';
+                    firework.style.backgroundColor = getRandomColor();
+                    
+                    body.appendChild(firework);
+                    
+                    // थोड़ी देर बाद हटाने के लिए
+                    setTimeout(() => {
+                        firework.remove();
+                    }, 2000);
+                }
+            }
+            
+            // यादृच्छिक रंग जनरेट करने के लिए
+            function getRandomColor() {
+                const colors = ['gold', '#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff'];
+                return colors[Math.floor(Math.random() * colors.length)];
+            }
+        });
+    </script>
+</body>
+</html>
